@@ -1,0 +1,87 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "fields": {
+        "uid": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "email": { "type": "string", "required": true },
+        "photoURL": { "type": "string", "required": false },
+        "role": { "type": "string", "required": true },
+        "isPremium": { "type": "boolean", "required": true },
+        "phoneNumber": { "type": "string", "required": false },
+        "walletBalance": { "type": "number", "required": false },
+        "isFrozen": { "type": "boolean", "required": false },
+        "premiumPlanId": { "type": "string", "required": false },
+        "premiumPlanName": { "type": "string", "required": false },
+        "premiumActivatedAt": { "type": "string", "required": false },
+        "premiumExpiresAt": { "type": "string", "required": false },
+        "activationStatus": { "type": "string", "required": true },
+        "createdAt": { "type": "string", "required": true },
+        "updatedAt": { "type": "string", "required": false }
+      }
+    },
+    "PaymentRequest": {
+      "collection": "paymentRequests",
+      "fields": {
+        "userId": { "type": "string", "required": true },
+        "userEmail": { "type": "string", "required": true },
+        "userName": { "type": "string", "required": true },
+        "transactionRef": { "type": "string", "required": true },
+        "planId": { "type": "string", "required": true },
+        "planName": { "type": "string", "required": true },
+        "amount": { "type": "number", "required": true },
+        "currency": { "type": "string", "required": true },
+        "submittedAt": { "type": "string", "required": true },
+        "status": { "type": "string", "required": true },
+        "reviewedBy": { "type": "string", "required": false },
+        "reviewedAt": { "type": "string", "required": false },
+        "adminNote": { "type": "string", "required": false },
+        "generatedCode": { "type": "string", "required": false }
+      }
+    },
+    "ActivationCode": {
+      "collection": "activationCodes",
+      "fields": {
+        "code": { "type": "string", "required": true },
+        "planId": { "type": "string", "required": true },
+        "planName": { "type": "string", "required": true },
+        "durationDays": { "type": "number", "required": true },
+        "assignedUserId": { "type": "string", "required": false },
+        "assignedUserEmail": { "type": "string", "required": false },
+        "isUsed": { "type": "boolean", "required": true },
+        "usedByUserId": { "type": "string", "required": false },
+        "usedByUserEmail": { "type": "string", "required": false },
+        "usedAt": { "type": "string", "required": false },
+        "createdAt": { "type": "string", "required": true },
+        "expiresAt": { "type": "string", "required": false },
+        "createdBy": { "type": "string", "required": false }
+      }
+    },
+    "SubscriptionConfig": {
+      "collection": "settings",
+      "fields": {
+        "paymentPhone": { "type": "string", "required": true },
+        "paymentRecipient": { "type": "string", "required": true },
+        "whatsappSupport": { "type": "string", "required": true },
+        "updatedAt": { "type": "string", "required": false }
+      }
+    },
+    "Ticket": {
+      "collection": "tickets",
+      "fields": {
+        "ticketId": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "userEmail": { "type": "string", "required": false },
+        "stake": { "type": "number", "required": true },
+        "totalOdds": { "type": "number", "required": true },
+        "potentialPayout": { "type": "number", "required": true },
+        "status": { "type": "string", "required": true },
+        "settled": { "type": "boolean", "required": true },
+        "paidOut": { "type": "boolean", "required": false },
+        "placedAt": { "type": "string", "required": true },
+        "settledAt": { "type": "string", "required": false }
+      }
+    }
+  }
+}
